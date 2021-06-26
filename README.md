@@ -1,1 +1,2 @@
-pyinstaller.exe --onefile --windowed --icon=app.ico yt_automation.py
+# Membuat executable windows
+pyinstaller.exe --onefile --icon=app.ico yt_automation.py
