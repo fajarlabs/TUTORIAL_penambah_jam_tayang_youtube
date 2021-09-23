@@ -62,12 +62,13 @@ if __name__ == '__main__':
 		driver = None
 		proxy = ""
 		try :
-			prox = getProxy()
+			
 			firefox_capabilities = webdriver.DesiredCapabilities.FIREFOX
 			firefox_capabilities['marionette'] = True
-			proxy = prox["ip"]+":"+prox["port"]
 
 			if USE_PROXY == True :
+			  prox = getProxy()
+			  proxy = prox["ip"]+":"+prox["port"]
 				firefox_capabilities['proxy'] = {
 				    "proxyType": "MANUAL",
 				    "httpProxy": proxy,

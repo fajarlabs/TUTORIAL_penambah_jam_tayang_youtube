@@ -157,12 +157,12 @@ if __name__ == '__main__':
 			options = Options()
 			if YT_CONFIG['SETTING']['IS_HEADLESS'] == 'Y':
 				options.headless = True
-			prox = getProxy()
 			firefox_capabilities = webdriver.DesiredCapabilities.FIREFOX
 			firefox_capabilities['marionette'] = True
-			proxy = prox["ip"]+":"+prox["port"]
 
 			if YT_CONFIG['SETTING']['PROXY'] == 'Y' :
+				prox = getProxy()
+				proxy = prox["ip"]+":"+prox["port"]
 				firefox_capabilities['proxy'] = {
 				    "proxyType": "MANUAL",
 				    "httpProxy": proxy,
